@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Picture/>
+        <Picture />
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
         <p>Utilizo as seguintes tecnologias:</p>
@@ -9,6 +9,9 @@
             <li>PHP</li>
             <li>Python</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{ texto_botao }}</button>
+        </div>
         <p v-show="mostrar_email">Mande um email para: {{email}}</p>
         <p>Para acessar o meu portifólio <a v-bind:href="portifolio">basta clicar aqui</a></p>
     </div>
@@ -22,9 +25,20 @@ import Picture from './Picture.vue';
             esta_trabalhando: false,
             mostrar_email: false,
             email: "MattheusMedina@outlook.com",
-            portifolio: "https://google.com"
+            portifolio: "https://google.com",
+            texto_botao: "Mostrar email"
         };
     },
-    components: { Picture }
+    components: { Picture },
+    methods: {
+        showEmail() {
+            this.mostrar_email = !this.mostrar_email
+            if(!this.mostrar_email){
+                this.texto_botao = "Mostrar email"
+            } else {
+                this.texto_botao = "Ocultar email"
+            }
+        }
+    }
 }
 </script>

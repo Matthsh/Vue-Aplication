@@ -16,11 +16,18 @@ import { createDOMCompilerError } from '@vue/compiler-dom';
             setTimeout(() => {
                 this.name = "Mattheus"
             }, 1000)
+            this.lifeCycle()
         },
         mounted(){
             setTimeout(() => {
                 this.name = "Pedro"
             }, 2000)
+            this.lifeCycle();
+        },
+        methods: {
+            lifeCycle() {
+                console.log("Executou")
+            }
         }
     }
 </script>
