@@ -13,7 +13,7 @@
             <button @click="showEmail">{{ texto_botao }}</button>
         </div>
         <p v-show="mostrar_email">Mande um email para: {{email}}</p>
-        <p>Para acessar o meu portifólio <a v-bind:href="portifolio">basta clicar aqui</a></p>
+        <p class="teste">Para acessar o meu portifólio <a v-bind:href="portifolio">basta clicar aqui</a></p>
     </div>
 </template>
 <script>
@@ -42,3 +42,9 @@ import Picture from './Picture.vue';
     }
 }
 </script>
+
+<style>
+.paragrafo_pai {
+    color: red;
+}
+</style>
